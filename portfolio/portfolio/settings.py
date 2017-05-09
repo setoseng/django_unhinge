@@ -26,7 +26,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY','dev')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '52.91.199.122'
+    '52.91.199.122',
+    'localhost,
 ]
 
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,3 +124,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static-compiled")
