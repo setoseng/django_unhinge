@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+	<h1>Hello</h1>
+	<form action="contact_me" method="POST">
+	{% csrf_token %}
+	{{form.non_field_errors}}
+	 <div class="form-group">
+		<label for="InputQuestion">Name</label>
+	  	<input type="text" class="form-control" id="InputName" placeholder="Name" name="your_name">
+	 </div>	
+	  <div class="form-group">
+	    <label for="InputEmail1">Email address</label>
+	    <input type="email" class="form-control" id="InputEmail1" placeholder="Email" name="your_email">
+	  </div>
+	  <div class="form-group">
+	    <label for="InputPassword1">Question</label>
+	    <input type="text" class="form-control" id="InputQuestion" placeholder="What's your favorite color?" name="your_question">
+	  </div>
+	  <div class="form-group">
+	    <label for="InputFile">File input</label>
+	    <input type="file" id="InputFile">
+	    <p class="help-block">Link a file</p>
+	  </div>
+	  <div class="checkbox">
+	  </div>
+	  <button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
+{% endblock %}
