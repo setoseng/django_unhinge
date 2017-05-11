@@ -22,4 +22,6 @@ import homepage.views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage.views.homepage),
+    url(r'^contact_me$', homepage.views.contact_me),
+    url(r'^thanks$',homepage.views.thanks),
 ]
